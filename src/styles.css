@@ -6,15 +6,23 @@ body {
     width: 550px;
   }
   
-  input[type="checkbox"] {
+    h1 {
+        color: rgba(175, 47, 47, 0.15);
+      }
+      
+      input[type="checkbox"] {
     width: 25px;
     height: 25px;
   }
-  
+
   .form {
     border: solid 1px #ddd;
   }
   
+  .form form {
+    background-color: white;
+  }
+
   .form input {
     border: none;
   }
@@ -26,12 +34,20 @@ body {
   
   .main > ul > li {
     border-bottom: solid 1px #ededed;
+    color: #777;
   }
   
   footer {
     border: solid 1px #ddd;
+    background-color: white;
+}
+
+.count,
+button {
+  color: #777;
   }
   
   button {
+    background: none;
     border: none;
   }
