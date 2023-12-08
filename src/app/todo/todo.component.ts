@@ -4,7 +4,8 @@ import {
   EventEmitter,
   HostBinding,
   Input,
-  numberAttribute,
+  OnInit,
+  Output,
 } from '@angular/core';
 
 import { Todo } from '../model/todo';

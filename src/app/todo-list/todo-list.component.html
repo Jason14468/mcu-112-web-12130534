@@ -2,7 +2,7 @@
   *ngIf="tasks && tasks.length > 0; then dataList; else dataEmpty"
 ></ng-container>
 
-<ng-templa #dataList>
+<ng-template #dataList>
   <app-todo
     *ngFor="let task of tasks; let index = index"
     [task]="task"
