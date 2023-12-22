@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { Todo } from './model/todo';
 import { TaskService } from './services/task.service';
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
+import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoSearchComponent } from './todo-search/todo-search.component';
 
@@ -27,6 +28,7 @@ import { TodoSearchComponent } from './todo-search/todo-search.component';
     TodoListComponent,
     TodoDetailComponent,
     TodoSearchComponent,
+    TodoFormComponent,
     FooterComponent,
   ],
   templateUrl: './app.component.html',
@@ -48,7 +50,6 @@ export class AppComponent implements OnInit {
       this.refresh$.pipe(startWith(undefined)),
       this.search$
     ).pipe(switchMap(() => this.taskService.getAll(this.search$.value)));
-    v;
   }
 
   onAdd(): void {

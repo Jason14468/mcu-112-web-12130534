@@ -1,2 +1,5 @@
-export interface TodoForm {
+import { FormControl } from '@angular/forms';
+
+export interface ITodoForm {
+  content: FormControl<string | null>;
 }
