@@ -1,6 +1,13 @@
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { Observable, startWith, Subject, switchMap } from 'rxjs';
+import {
+  BehaviorSubject,
+  merge,
+  Observable,
+  startWith,
+  Subject,
+  switchMap,
+} from 'rxjs';
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -30,15 +37,18 @@ export class AppComponent implements OnInit {
 
   tasks$!: Observable<Todo[]>;
 
+  readonly search$ = new BehaviorSubject<string | null>(null);
+
   readonly refresh$ = new Subject<void>();
 
   selectedId?: number;
 
   ngOnInit(): void {
-    this.tasks$ = this.refresh$.pipe(
-      startWith(undefined),
-      switchMap(() => this.taskService.getAll())
-    );
+    this.tasks$ = merge(
+      this.refresh$.pipe(startWith(undefined)),
+      this.search$
+    ).pipe(switchMap(() => this.taskService.getAll(this.search$.value)));
+    v;
   }
 
   onAdd(): void {
@@ -53,5 +63,9 @@ export class AppComponent implements OnInit {
     this.taskService
       .updateState(task, state)
       .subscribe(() => this.refresh$.next());
+  }
+
+  onSearch(content: string | null): void {
+    this.search$.next(content);
   }
 }
