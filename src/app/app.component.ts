@@ -8,6 +8,7 @@ import { Todo } from './model/todo';
 import { TaskService } from './services/task.service';
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoSearchComponent } from './todo-search/todo-search.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     HeaderComponent,
     TodoListComponent,
     TodoDetailComponent,
+    TodoSearchComponent,
     FooterComponent,
   ],
   templateUrl: './app.component.html',
