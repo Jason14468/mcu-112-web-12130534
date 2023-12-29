@@ -1,9 +1,9 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "content": "Task A",
-      "hasFinished": false
+      "content": "asddffd",
+      "hasFinished": true,
+      "id": 1
     }
   ]
 }
