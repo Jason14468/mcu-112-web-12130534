@@ -8,10 +8,9 @@ describe('TodoDetailPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TodoDetailPageComponent]
-    })
-    .compileComponents();
-    
+      imports: [TodoDetailPageComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TodoDetailPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
