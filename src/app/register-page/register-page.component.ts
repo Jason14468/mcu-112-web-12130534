@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './register-page.component.html',
-  styleUrl: './register-page.component.css'
+  styleUrl: './register-page.component.css',
 })
-export class RegisterPageComponent {
-
-}
+export class RegisterPageComponent {}
